@@ -41,6 +41,35 @@ rm fidb/el7.x86_64.fidb
 - `02-ghidra-import.sh <osarch>`: Import (and analyze) from folder `<osarch>` into Ghidra project `el-fiddb`.
 - `03-ghidra-fidb.sh <osarch>`: Generates a `.fidb` file in `fidb/` with signatures for the libraries in `<osarch>` folder
 
+## Can I just download the .fidb files?
+
+Yes: <https://github.com/threatrack/ghidra-fidb-repo>
+
+## How much disk space and time will this take?
+
+As an example, look at [el7.x86_64.fidb](https://github.com/threatrack/ghidra-fidb-repo/blob/master/el7.x86_64.fidb). It includes:
+
+- `boost-static/1.53.0/27.el7.x86_64`
+- `glibc-static/2.17/260.el7_6.3.x86_64`
+- `glibc-static/2.17/260.el7_6.6.x86_64`
+- `glibc-static/2.17/260.el7.x86_64`
+- `glibc-static/2.17/292.el7.x86_64`
+- `libgo-static/4.8.5/36.el7_6.1.x86_64`
+- `libgo-static/4.8.5/36.el7.x86_64`
+- `libstdc++-static/4.8.5/36.el7.x86_64`
+- `lua-static/5.1.4/15.el7.x86_64`
+- `openssl-static/1.0.2k/16.el7_6.1.x86_64`
+- `openssl-static/1.0.2k/16.el7.x86_64`
+- `openssl-static/1.0.2k/19.el7.x86_64`
+- `protobuf-lite-static/2.5.0/8.el7.x86_64`
+- `protobuf-static/2.5.0/8.el7.x86_64`
+- `zlib-static/1.2.7/18.el7.x86_64`
+
+The object files in `el/el7.x86_64` were 192MB.
+The resulting Ghidra project after running `02-ghidra-import.sh` (which took 4h on a i5-2520M) was 16GB.
+Running `03-ghidra-fidb.sh` (which took 15min) resulted in a 6.6MB `fidb/el/el7.x86_64` file.
+Using `RepackFid.java` the final size is 5.9M.
+
 ## TODO
 
 - Adjust this to handle other sources of static libraries:
