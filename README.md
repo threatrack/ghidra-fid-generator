@@ -67,7 +67,7 @@ As an example, look at [el7.x86_64.fidb](https://github.com/threatrack/ghidra-fi
 
 The object files in `el/el7.x86_64` were 192MB.
 The resulting Ghidra project after running `02-ghidra-import.sh` (which took 4h on a i5-2520M) was 16GB.
-Running `03-ghidra-fidb.sh` (which took 15min) resulted in a 6.6MB `fidb/el/el7.x86_64` file.
+Running `03-ghidra-fidb.sh` (which took 15min) resulted in a 6.6MB `fidb/el7.x86_64.fidb` file.
 Using `RepackFid.java` the final size is 5.9M.
 
 ## TODO
