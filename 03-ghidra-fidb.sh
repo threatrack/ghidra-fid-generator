@@ -40,7 +40,8 @@ touch "log/duplicate_results.txt"
 "${ghidra_headless}" "${ghidra_proj}" "${proj}" -noanalysis -scriptPath ghidra_scripts -preScript AutoCreateMultipleLibraries.java log/duplicate_results.txt true fidb "/${os_arch}" log/common.txt "${langid}"
 
 # TODO: `Ghidra/Features/FunctionID/data/building_fid.txt` says the included .fidb files were cleaned up with the follow two scripts:
-# RemoveFunctions.java
-# RepackFid.java
+echo "Please check the generated fidb/${os_arch}.fidb and manually run RemoveFunctions.java on it."
+echo "Then run RepackFid.java to export it for distribution."
+
 
 

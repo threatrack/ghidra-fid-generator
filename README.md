@@ -70,6 +70,15 @@ The resulting Ghidra project after running `02-ghidra-import.sh` (which took 4h 
 Running `03-ghidra-fidb.sh` (which took 15min) resulted in a 6.6MB `fidb/el7.x86_64.fidb` file.
 Using `RepackFid.java` the final size is 5.9M.
 
+### Stats
+
+Here are the stats for (some) of the Function ID datasets in <https://github.com/threatrack/ghidra-fidb-repo>:
+
+| `.fidb`         | # `.o` | du `.o` | `02-ghidra-import.sh` | du `.gpr` | `03-ghidra-fidb.sh` | du `.fidb` | # Entries  |
+|-----------------|--------|---------|-----------------------|-----------|---------------------|------------|------------|
+| el7.x86_64.fidb | 13036  | 195M    | ~ 4h                  | 16GB      | ~ 15min             | 6.6M       | 57966      |
+| el7.i686.fidb   | 12600  | 132M    | ~ 8h                  | 16GB      | ~ 26min             | 6.6M       | 53823      |
+
 ## TODO
 
 - Adjust this to handle other sources of static libraries:
