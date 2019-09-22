@@ -76,8 +76,13 @@ Here are the stats for (some) of the Function ID datasets in <https://github.com
 
 | `.fidb`         | # `.o` | du `.o` | `02-ghidra-import.sh` | du `.gpr` | `03-ghidra-fidb.sh` | du `.fidb` | # Entries  |
 |-----------------|--------|---------|-----------------------|-----------|---------------------|------------|------------|
-| el7.x86_64.fidb | 13036  | 195M    | ~ 4h                  | 16GB      | ~ 15min             | 6.6M       | 57966      |
-| el7.i686.fidb   | 12600  | 132M    | ~ 8h                  | 16GB      | ~ 26min             | 6.6M       | 53823      |
+| el7.x86_64.fidb | 13036  | 195M    | ~ 4h                  | ~ 16GB    | ~ 15min             | 6.6M       | 57966      |
+| el7.i686.fidb   | 12600  | 132M    | ~ 8h                  | ~ 16GB    | ~ 26min             | 6.6M       | 53823      |
+| el6.x86_64.fidb |  5695  | 53M     | ~ 3h                  | ~  8GB    | ~  3min             | 2.2M       | 16912      |
+| el6.i686.fidb   |  5709  | 45M     | ~ 2h                  | ~  8GB    | ~  4min             | 2.5M       | 21612      |
+
+(These are only ballpark figures, as the measurements may have been impacted by
+thermal throttling or concurrent tasks running on the system.)
 
 ## TODO
 
