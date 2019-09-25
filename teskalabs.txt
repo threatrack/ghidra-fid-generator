@@ -1,0 +1,8 @@
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2o-android.tar.gz
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2n-android.tar.gz
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2o-ios.tar.gz
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2n-ios.tar.gz
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2s-x86_64-win-mingw-w64.zip
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2l-x86-win-msvc2013.tar.gz
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2l-arm-wp81-msvc2015.tar.gz
+https://teskalabs.blob.core.windows.net/openssl/openssl-dev-1.0.2l-x86-wp81-msvc2015.tar.gz

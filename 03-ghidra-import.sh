@@ -7,7 +7,7 @@ if [[ ! $GHIDRA_HOME ]]; then
 fi
 if [[ ! $GHIDRA_PROJ ]]; then
 	echo "Must set \$GHIDRA_PROJ, e.g. via:"
-	echo "export GHIDRA_PROJ=/home/user/ghidra-proj"
+	echo "export GHIDRA_PROJ=/home/user/ghidra_projects"
 	exit 1
 fi
 
@@ -15,7 +15,7 @@ ghidra_path="${GHIDRA_HOME}"
 ghidra_headless="${ghidra_path}/support/analyzeHeadless"
 ghidra_scripts="${ghidra_path}/Ghidra/Features/FunctionID/ghidra_scripts"
 ghidra_proj="${GHIDRA_PROJ}"
-proj="el-fidb"
+proj="lib-fidb"
 
 if [[ $# -ne 1 ]]; then
 	echo "usage: ${0} <path>"
@@ -23,12 +23,8 @@ if [[ $# -ne 1 ]]; then
 fi
 
 libpath="${1}"
-os_arch=$(basename $(readlink -f ${libpath}))
-langid="x86:LE:32:default"
-if echo "${os_arch}" | grep -q -E "x86_64\$"; then
-	langid="x86:LE:64:default"
-fi
+provider=$(basename $(readlink -f ${libpath}))
 
-"${ghidra_headless}" "${ghidra_proj}"  "${proj}" -import "${libpath}" -recursive -preScript FunctionIDHeadlessPrescript.java -postScript FunctionIDHeadlessPostscript.java -processor "${langid}" -cspec gcc
+"${ghidra_headless}" "${ghidra_proj}"  "${proj}" -import "${libpath}" -recursive -preScript FunctionIDHeadlessPrescript.java -postScript FunctionIDHeadlessPostscript.java | tee -a "lib/${provider}-headless.log"
 
 

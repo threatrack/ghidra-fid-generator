@@ -369,12 +369,13 @@ public class AutoCreateMultipleLibraries extends GhidraScript {
 
 		// TODO: FIXME: we can't askFile here because in headless file must exist
 		File d = askDirectory("FidDB path", "OK");
+		String fidbName = askString("Enter name of Fidb file", "OK");
 
 		rootFolder =
 			askProjectFolder("Select root folder containing all libraries (at a depth of " +
 				Integer.toString(MASTER_DEPTH) + "):");
 
-		File f = new File(d.getPath()+"/"+rootFolder.getName()+".fidb");
+		File f = new File(d.getPath()+"/"+fidbName);
 
 		FidFileManager.getInstance().createNewFidDatabase(f);
 		FidFile fidFile = FidFileManager.getInstance().addUserFidFile(f);

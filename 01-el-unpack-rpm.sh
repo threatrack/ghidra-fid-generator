@@ -12,7 +12,7 @@ version=$(echo ${pkg} | sed 's/^\(.*\)-\([^-]\+\)-\(.\+\)\.rpm$/\2/g')
 release=$(echo ${pkg} | sed 's/^\(.*\)-\([^-]\+\)-\(.\+\)\.rpm$/\3/g')
 el=$(echo ${pkg} | grep -o "el7\|el6\|el5\|el4\|el3\|el2")
 arch=$(echo ${pkg} | grep -o "x86_64\|i686\|i586\|i486\|i386")
-path="el/${el}.${arch}/${name}/${version}/${release}"
+path="lib/${el}/${name}/${version}/${release}"
 
 mkdir -p "${path}"
 path=$(readlink -f "${path}")
@@ -22,10 +22,4 @@ rpm2cpio "${rpmfile}" | cpio -idmv
 find "$(pwd)" -iname "*.a" -exec mv {} "${path}/." \;
 cd ..
 rm -rf "${tmp}"
-
-cd "${path}"
-ls | grep -E "^*.a$" | while read lib; do
-	ar x "${lib}"
-	rm "${lib}"
-done
 

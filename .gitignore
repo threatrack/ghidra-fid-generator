@@ -1,5 +1,8 @@
 rpms/
-el/
+lib/
 fidb/
 filelist
 log/
+teskalabs/
+*-primary.xml
+debs/
