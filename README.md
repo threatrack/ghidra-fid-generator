@@ -8,6 +8,22 @@
 - Set `GHIDRA_PROJ` env var to your Ghidra project directory, e.g. via `export GHIDRA_PROJ=/home/user/ghidra_projects`
 - **Must use `ghidra-9.1-DEV` or later** due to a bug in X86_64 relocation handling (<https://github.com/NationalSecurityAgency/ghidra/pull/910>)
 
+Only tested with CentOS 7. Requires:
+- wget
+- grep
+- sed
+- sort
+- gzip
+- 7z
+- find
+- rpm2cpio
+- cpio
+- unzip
+- tar
+- ar
+- tee
+- (maybe others; please open an issue if you have problems)
+
 To generate `fidb/el7-x86.LE.32.default.fidb` and `fidb/el7-x86:LE:64:default` run:
 
 ```
