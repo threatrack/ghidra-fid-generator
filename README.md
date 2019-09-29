@@ -161,6 +161,7 @@ ERROR REPORT SCRIPT ERROR:  /home/user/github/threatrack/ghidra-fid-generator/gh
 ```
 
 You can fix it by going into Ghidra and in the project view right clicking (in this case `x86_64cpuid.o`) and change its `Language` to `gcc` (or what ever the error complains it should be).
+You can use `ghidra_scripts/SearchFalseCspecsInPrograms.py` to search for programs in a project that do not match a desired compiler spec.
 
 The cause of this problem seems to be that Ghidra on import identified the compiler wrongly and then on generating the .fidb complains about it.
 
@@ -168,4 +169,5 @@ The cause of this problem seems to be that Ghidra on import identified the compi
 
 - De-duplicate .o files. Going from one minor version to the next some .o files in a package don't change at all. Analyzing the same file multiple times wastes time.
 - Re-do `el{6,7}` with new system.
+- Extend `ghidra_scripts/SearchFalseCspecsInPrograms.py` to automatically change the Compiler ID and not just find the offending programs.
 
