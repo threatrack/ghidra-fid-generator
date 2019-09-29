@@ -24,6 +24,12 @@ Only tested with CentOS 7. Requires:
 - tee
 - (maybe others; please open an issue if you have problems)
 
+Everything should be already installed (even on a minimal install) except:
+```
+yum install epel-release
+yum install p7zip
+```
+
 To generate `fidb/el7-x86.LE.32.default.fidb` and `fidb/el7-x86:LE:64:default` run:
 
 ```
