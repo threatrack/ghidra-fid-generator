@@ -23,6 +23,7 @@ find "$(pwd)" -regex ".*\.\(lib\|a\)" | while read lib; do
 	cd "${subdir}"
 	cat *.txt | awk '{print $2}' >> ${common}
 	find -type f -not -iname '*.o' -and -not -iname '*.obj' -exec rm {} \;
+	find -type l -exec rm {} \; # delete symlinks
 	rm -rf "${lib}"
 done
 sort -u ${common} -o ${common}

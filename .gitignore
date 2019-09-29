@@ -6,3 +6,5 @@ log/
 teskalabs/
 *-primary.xml
 debs/
+avr-libc/
+uclibc/

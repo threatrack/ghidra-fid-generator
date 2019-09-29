@@ -10,7 +10,7 @@ pkg=$(echo ${rpmfile} | grep -o "[^\/]*\.rpm")
 name=$(echo ${pkg} | sed 's/^\(.*\)-\([^-]\+\)-\(.\+\)\.rpm$/\1/g')
 version=$(echo ${pkg} | sed 's/^\(.*\)-\([^-]\+\)-\(.\+\)\.rpm$/\2/g')
 release=$(echo ${pkg} | sed 's/^\(.*\)-\([^-]\+\)-\(.\+\)\.rpm$/\3/g')
-el=$(echo ${pkg} | grep -o "el7\|el6\|el5\|el4\|el3\|el2")
+el=$(echo ${pkg} | grep -o "el8\|el7\|el6\|el5\|el4\|el3\|el2")
 arch=$(echo ${pkg} | grep -o "x86_64\|i686\|i586\|i486\|i386")
 path="lib/${el}/${name}/${version}/${release}"
 

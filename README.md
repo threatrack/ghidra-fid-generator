@@ -27,7 +27,7 @@ Only tested with CentOS 7. Requires:
 Everything should be already installed (even on a minimal install) except:
 ```
 yum install epel-release
-yum install p7zip
+yum install p7zip p7zip-plugins
 ```
 
 To generate `fidb/el7-x86.LE.32.default.fidb` and `fidb/el7-x86:LE:64:default` run:

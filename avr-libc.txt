@@ -1,0 +1,2 @@
+https://download.savannah.gnu.org/releases/avr-libc/binary-releases/avr-libc-bin-1.8.1.zip
+https://download.savannah.gnu.org/releases/avr-libc/binary-releases/avr-libc-bin-2.0.0.zip
