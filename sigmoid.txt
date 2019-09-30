@@ -1,0 +1,17 @@
+https://www.npcglib.org/~stathis/downloads/openssl-1.1.0f-vs2017.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.1.0f-vs2015.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.1.0f-vs2013.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.1.0f-vs2012.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.1.0f-vs2010.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.1.0f-vs2008.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.2l-vs2017.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.2l-vs2015.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.2l-vs2013.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.2l-vs2012.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.2l-vs2010.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.2l-vs2008.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.1u-vs2015.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.1u-vs2013.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.1u-vs2012.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.1u-vs2010.7z
+https://www.npcglib.org/~stathis/downloads/openssl-1.0.1u-vs2008.7z
