@@ -171,9 +171,29 @@ You can use `ghidra_scripts/SearchFalseCspecsInPrograms.py` to search for progra
 
 The cause of this problem seems to be that Ghidra on import identified the compiler wrongly and then on generating the .fidb complains about it.
 
+### No load spec found for import file
+
+Sometimes Ghidra can't determine what language and/or compiler it should use to import a file.
+The error message is as follows:
+
+```
+ERROR REPORT: Import failed for file: /home/ghidra/ghidra-fid-generator/lib/libsodium/libsodium/1.0.17/stable-msvc/libsodium/Win32/Debug/v100/ltcg/libsodium/D/a/1/s/ob
+j/libsodium/Win32/Debug/v100/ltcg/utils.obj (HeadlessAnalyzer)  
+INFO  IMPORTING: /home/ghidra/ghidra-fid-generator/lib/libsodium/libsodium/1.0.17/stable-msvc/libsodium/Win32/Debug/v100/ltcg/libsodium/D/a/1/s/obj/libsodium/Win32/Deb
+ug/v100/ltcg/verify.obj (HeadlessAnalyzer)  
+INFO  No load spec found for import file: /home/ghidra/ghidra-fid-generator/lib/libsodium/libsodium/1.0.17/stable-msvc/libsodium/Win32/Debug/v100/ltcg/libsodium/D/a/1/
+s/obj/libsodium/Win32/Debug/v100/ltcg/verify.obj (AutoImporter)  
+ERROR The AutoImporter could not successfully load /home/ghidra/ghidra-fid-generator/lib/libsodium/libsodium/1.0.17/stable-msvc/libsodium/Win32/Debug/v100/ltcg/libsodi
+um/D/a/1/s/obj/libsodium/Win32/Debug/v100/ltcg/verify.obj with the provided import parameters. Please ensure that any specified processor/cspec arguments are compatibl
+e with the loader that is used during import and try again. (HeadlessAnalyzer)  
+```
+
+These can only be fixed by manually importing the files with a manually selected load spec. :(
+
 ## TODO
 
 - De-duplicate .o files. Going from one minor version to the next some .o files in a package don't change at all. Analyzing the same file multiple times wastes time.
 - Re-do `el{6,7}` with new system.
 - Extend `ghidra_scripts/SearchFalseCspecsInPrograms.py` to automatically change the Compiler ID and not just find the offending programs.
+- Fix `No load spec found for import file` errors
 
