@@ -21,9 +21,9 @@ ls | while read f; do
 	else
 		continue
 	fi
-	lib=$(echo "${dir}" | sed 's/\([^-]\+\)-\([^-]\+\)-\([^-]\+\)\..\+/\1/g')
-	ver=$(echo "${dir}" | sed 's/\([^-]\+\)-\([^-]\+\)-\([^-]\+\)\..\+/\2/g')
-	var=$(echo "${dir}" | sed 's/\([^-]\+\)-\([^-]\+\)-\([^-]\+\)\..\+/\3/g')
+	lib=$(echo "${dir}" | sed 's/\([^-]\+\)-\([^-]\+\)-\([^-]\+\)/\1/g')
+	ver=$(echo "${dir}" | sed 's/\([^-]\+\)-\([^-]\+\)-\([^-]\+\)/\2/g')
+	var=$(echo "${dir}" | sed 's/\([^-]\+\)-\([^-]\+\)-\([^-]\+\)/\3/g')
 	path="${libpath}/${provider}/${lib}/${ver}/${var}"
 	mkdir -p "${path}"
 
