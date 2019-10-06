@@ -9,3 +9,4 @@ debs/
 avr-libc/
 uclibc/
 sigmoid/
+libsodium/

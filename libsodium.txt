@@ -1,0 +1,4 @@
+https://download.libsodium.org/libsodium/releases/libsodium-1.0.17-stable-mingw.tar.gz
+https://download.libsodium.org/libsodium/releases/libsodium-1.0.17-stable-msvc.zip
+https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable-mingw.tar.gz
+https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable-msvc.zip
