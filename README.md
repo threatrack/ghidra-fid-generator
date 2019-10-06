@@ -176,4 +176,15 @@ The cause of this problem seems to be that Ghidra on import identified the compi
 - De-duplicate .o files. Going from one minor version to the next some .o files in a package don't change at all. Analyzing the same file multiple times wastes time.
 - Re-do `el{6,7}` with new system.
 - Extend `ghidra_scripts/SearchFalseCspecsInPrograms.py` to automatically change the Compiler ID and not just find the offending programs.
+- Deactivate the following analysis, as they should not be needed to generate accurate Function IDs thus only waste time:
 
+```
+    ASCII Strings                              0.000 secs
+    Apply Data Archives                        4.160 secs
+    Basic Constant Reference Analyzer          0.177 secs
+    Decompiler Switch Analysis                 0.001 secs
+    Embedded Media                             0.003 secs
+```
+
+- Use DWARF information to build Data Type Archives
+- FIXME: libsodium exhibited `Program has different compiler spec than already established` on some object files. Needs to be figured out and fixed.
