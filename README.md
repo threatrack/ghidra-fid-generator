@@ -188,16 +188,6 @@ However, only some files werre affected. So the files that could not be imported
 
 - De-duplicate .o files. Going from one minor version to the next some .o files in a package don't change at all. Analyzing the same file multiple times wastes time.
 - Re-do `el{6,7}` with new system.
-- Deactivate the following analysis, as they should not be needed to generate accurate Function IDs thus only waste time:
-
-```
-    ASCII Strings                              0.000 secs
-    Apply Data Archives                        4.160 secs
-    Basic Constant Reference Analyzer          0.177 secs
-    Decompiler Switch Analysis                 0.001 secs
-    Embedded Media                             0.003 secs
-```
-
 - FIXME: libsodium exhibited `AutoImporter could not successfully load...` error. Needs to be figured out and fixed.
 - Add `ghidra_scripts/MergeFidb.py` to merge multiple Function ID datasets.
 
