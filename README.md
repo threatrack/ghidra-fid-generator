@@ -167,15 +167,27 @@ ERROR REPORT SCRIPT ERROR:  /home/user/github/threatrack/ghidra-fid-generator/gh
 ```
 
 You can fix it by going into Ghidra and in the project view right clicking (in this case `x86_64cpuid.o`) and change its `Language` to `gcc` (or what ever the error complains it should be).
-You can use `ghidra_scripts/SearchFalseCspecsInPrograms.py` to search for programs in a project that do not match a desired compiler spec.
 
 The cause of this problem seems to be that Ghidra on import identified the compiler wrongly and then on generating the .fidb complains about it.
+
+You can use `ghidra_scripts/SearchFalseCspecsInPrograms.py` to search for programs in a project that do not match a desired compiler spec.
+You can use **`ghidra_scripts/SetCspecForPrograms.py`** to automatically force a compiler spec for all programs under a root folder.
+
+### The AutoImporter could not successfully load...
+
+On libsodium there was a problem with the auto importer:
+
+```
+2019-10-06 16:13:15 ERROR (HeadlessAnalyzer) The AutoImporter could not successfully load /home/ghidra/ghidra-fid-generator/lib/libsodium/libsodium/1.0.17/stable-msvc/libsodium/Win32/Debug/v100/ltcg/libsodium/D/a/1/s/obj/libsodium/Win32/Debug/v100/ltcg/stream_salsa2012.obj with the provided import parameters. Please ensure that any specified processor/cspec arguments are compatible with the loader that is used during import and try again.  
+2019-10-06 16:13:15 ERROR (HeadlessAnalyzer) REPORT: Import failed for file: /home/ghidra/ghidra-fid-generator/lib/libsodium/libsodium/1.0.17/stable-msvc/libsodium/Win32/Debug/v100/ltcg/libsodium/D/a/1/s/obj/libsodium/Win32/Debug/v100/ltcg/stream_salsa2012.obj
+```
+
+However, only some files werre affected. So the files that could not be imported were ignored ... for now.
 
 ## TODO
 
 - De-duplicate .o files. Going from one minor version to the next some .o files in a package don't change at all. Analyzing the same file multiple times wastes time.
 - Re-do `el{6,7}` with new system.
-- Extend `ghidra_scripts/SearchFalseCspecsInPrograms.py` to automatically change the Compiler ID and not just find the offending programs.
 - Deactivate the following analysis, as they should not be needed to generate accurate Function IDs thus only waste time:
 
 ```
@@ -186,6 +198,5 @@ The cause of this problem seems to be that Ghidra on import identified the compi
     Embedded Media                             0.003 secs
 ```
 
-- Use DWARF information to build Data Type Archives
-- FIXME: libsodium exhibited `Program has different compiler spec than already established` on some object files. Needs to be figured out and fixed.
+- FIXME: libsodium exhibited `AutoImporter could not successfully load...` error. Needs to be figured out and fixed.
 
