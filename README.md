@@ -111,6 +111,8 @@ After the import run `./04-checklog.sh lib/provider-name` this will read the `li
 and generate `lib/provider-name-langids.txt` from it. `lib/provider-name-langids.txt` is used by `05-ghidra-fidb.sh` to know for which processor architectures
 Function ID datasets should be generated.
 
+Add the file `lib/provider-name-common.txt`. This is a file with common function names, which will be excluded from the Function ID signatures. Currently, the file is simply empty, so you can simply do a `touch lib/provider-name-common.txt`.
+
 Last run `./05-ghidra-fidb.sh lib/provider-name` to generate `fidb/provider-name-PROC.ENDIAN.SIZE.VARIANT.fidb`.
 
 ## Can I just download the .fidb files?
